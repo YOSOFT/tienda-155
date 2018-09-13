@@ -25,5 +25,7 @@ export class HomePage {
       }
     );
   }
-
+  irDetalle(producto){
+    this.navCtrl.push('DetalleProductoPage', {miProducto: producto})
+  }
 }
