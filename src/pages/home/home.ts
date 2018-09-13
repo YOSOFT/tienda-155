@@ -8,6 +8,8 @@ import { ProductoProvider } from '../../providers/producto/producto';
 })
 export class HomePage {
 
+  productos = [];
+
   constructor(
     public navCtrl: NavController,
     private servicioProducto: ProductoProvider
@@ -16,7 +18,12 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    this.servicioProducto.obtenerProductos();
+    this.servicioProducto.obtenerProductos().subscribe(
+      (datos: any[]) => {
+        this.productos = datos;
+        console.log(this.productos);
+      }
+    );
   }
 
 }

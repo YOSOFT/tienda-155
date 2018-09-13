@@ -9,12 +9,7 @@ export class ProductoProvider {
   }
 
   obtenerProductos(){
-    this.http.get('assets/data.json')
-      .subscribe(
-        (datos) => console.log(datos),
-        (error) => console.log(error),
-        () => console.log("completo")
-      );
+   return this.http.get('assets/data.json');
   }
 
 }
